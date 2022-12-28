@@ -1,4 +1,4 @@
-// define Element 
+// Define Element 
 let $ = document
 const addCarBtn = $.querySelector('.add-btn')
 const nameInputElem = $.querySelector('#name')
@@ -7,13 +7,13 @@ const yearInputElem = $.querySelector('#year')
 const carsContainer = $.querySelector('#car-list')
 let cars = []
 
-// AddCarToList
+// Add Car To List
 addCarBtn.addEventListener('click', function (event) {
     event.preventDefault()
     let nameInputValue = nameInputElem.value
     let priceInputValue = priceInputElem.value
     let yearInputValue = yearInputElem.value
-    // SaveInputValuesToAnObject
+    // Save InputValues To AnObject
     let newCarObject = {
         id: cars.length + 1,
         name: nameInputValue,
@@ -28,7 +28,7 @@ addCarBtn.addEventListener('click', function (event) {
 
 function setIntoLocalStorage(allCarsArray) {
     localStorage.setItem('cars', JSON.stringify(allCarsArray))
-    makeEmptyInputs()//reset input after add
+    makeEmptyInputs()//Reset input after add
     carsGenerator(allCarsArray)//update dom and localstorage together
 }
 function makeEmptyInputs() {
